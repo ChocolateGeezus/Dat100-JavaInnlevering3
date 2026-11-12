@@ -1,38 +1,38 @@
 package no.hvl.dat100.oppgave2;
 
-import no.hvl.dat100.common.TODO;
-
 public class Bilde extends Tekst {
 
-	// TODO - objekt variable
-	
+	private String url;
+
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		super(id, bruker, dato, tekst);
+		this.url = url;
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		super(id, bruker, dato, likes, tekst);
+		this.url = url;
 	}
-	
-	public String getUrl() {
-		throw new UnsupportedOperationException(TODO.method());
 
+	public String getUrl() {
+		return url;
 	}
 
 	public void setUrl(String url) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.url = url;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method ());
-
+		return "BILDE\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n"
+				+ getLikes() + "\n" + getTekst() + "\n" + url + "\n";
 	}
 
-	// Metoden nedenfor er kun for valgfri oppgave 6
+	// Brukes i valgfri Oppgave 6 (HtmlBlogg)
+	@Override
 	public String toHTML() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		return "\t\t<h2>" + getBruker() + "@" + getDato() + " [" + getLikes() + "]<h2>\n"
+				+ "\t\t<p>" + getTekst() + "<p>\n"
+				+ "\t\t<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
 	}
 }
